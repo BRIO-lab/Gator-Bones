@@ -34,7 +34,7 @@ class Configuration:
         self.dataset = {
             'IMAGE_HEIGHT': 1024,
             'IMAGE_WIDTH': 1024,
-            'MODEL_TYPE': 'fem',        # specifies that it's a femur model. how should we do this? not clear this is still best...
+            'MODEL_TYPE': 'tib',        # specifies that it's a femur model. how should we do this? not clear this is still best...
             'CLASS_LABELS': {0: 'bone', 1: 'background'},
             'IMG_CHANNELS': 1,      # Is this differnt from self.module['NUM_IMAGE_CHANNELS']
             'IMAGE_THRESHOLD': 0,
@@ -55,8 +55,8 @@ class Configuration:
         }
 
         self.model = {
-            'FEATURE_EXTRACTOR': 'pose_hrnet', # See models/feature_extractors
-            'HEAD': "pose_hrnet", # See models/nets
+            'FEATURE_EXTRACTOR': 'swin_unetr', # See models/feature_extractors
+            'HEAD': "swin_unetr", # See models/nets
             'LOSS': nn.BCEWithLogitsLoss(), # monai.losses.DiceLoss(sigmoid=True)
         }
 
@@ -64,7 +64,7 @@ class Configuration:
             # *** CHANGE THE IMAGE DIRECTORY TO YOUR OWN ***
             #'IMAGE_DIRECTORY': '/media/sasank/LinuxStorage/Dropbox (UFL)/Canine Kinematics Data/TPLO_Ten_Dogs_grids',
             #'IMAGE_DIRECTORY': '../TPLO_Ten_Dogs_grids', # C:\Users\gregg\Desktop\TPLO_Ten_Dogs_grids\TPLO_Ten_Dogs_grids
-            'IMAGE_DIRECTORY': 'D:\TPLO_Ten_Dogs_grids', # C:\Users\gregg\Desktop\TPLO_Ten_Dogs_grids\TPLO_Ten_Dogs_grids
+            'IMAGE_DIRECTORY': '/blue/banks/jiayu.huang/TPLO_Ten_Dogs_grids', # C:\Users\gregg\Desktop\TPLO_Ten_Dogs_grids\TPLO_Ten_Dogs_grids
             # *** CHANGE THE CHECKPOINT PATH TO YOUR OWN FOR TESTING ***
             'CKPT_FILE': '../TPLO_Ten_Dogs_grids/TestModel.ckpt',  # used when loading model from a checkpoint
             # 'CKPT_FILE': None,  # used when loading model from a checkpoint, such as in testing
