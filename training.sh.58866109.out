@@ -1,0 +1,56 @@
+Sat Mar  4 11:53:36 EST 2023
+c1100a-s11.ufhpc
+/blue/banks/jiayu.huang/GatorBones
+wandb: Currently logged in as: peter6866 (miller-lab). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.10
+wandb: Run data is saved locally in /blue/banks/jiayu.huang/GatorBones/wandb/run-20230304_115403-tjuwnbki
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 2023-03-04-11-54-01
+wandb: ⭐️ View project at https://wandb.ai/miller-lab/Segmentation%20Trial
+wandb: 🚀 View run at https://wandb.ai/miller-lab/Segmentation%20Trial/runs/tjuwnbki
+The Trainer argument `auto_select_gpus` has been deprecated in v1.9.0 and will be removed in v2.0.0. Please use the function `pytorch_lightning.accelerators.find_usable_cuda_devices` instead.
+Auto select gpus: [0, 1, 2]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+['/blue/banks/jiayu.huang/GatorBones/scripts', '/home/jiayu.huang/.conda/envs/JTML/lib/python39.zip', '/home/jiayu.huang/.conda/envs/JTML/lib/python3.9', '/home/jiayu.huang/.conda/envs/JTML/lib/python3.9/lib-dynload', '/home/jiayu.huang/.local/lib/python3.9/site-packages', '/home/jiayu.huang/.conda/envs/JTML/lib/python3.9/site-packages', '/scratch/local/58866109/tmpx3jm4nl7', '/blue/banks/jiayu.huang/GatorBones/config/', '/blue/banks/jiayu.huang/GatorBones/scripts/../models']
+Type of net selected: swin_unetr
+Net is on device -1
+Is this net on GPU? False
+Net is on device 0
+Net on GPU? True
+2023-03-04 11:54:12,459 - Added key: store_based_barrier_key:1 to store for rank: 0
+2023-03-04 11:54:12,459 - Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+You are using a CUDA device ('NVIDIA A100-SXM4-80GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2,3,7]
+
+  | Name    | Type              | Params
+----------------------------------------------
+0 | seg_net | Swin_UNETR        | 6.3 M 
+1 | loss_fn | BCEWithLogitsLoss | 0     
+----------------------------------------------
+6.3 M     Trainable params
+0         Non-trainable params
+6.3 M     Total params
+25.209    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+********************  Starting Fitting!  ********************
+Sanity Checking: 0it [00:00, ?it/s]
+********************  Starting Validation!  ********************
+
+Sanity Checking:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:07<00:07,  7.37s/it]Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:15<00:00,  7.60s/it]
+********************  Finished Validation!  ********************
+
+***************Min Validation Loss is 0.740699052810669
+                                                                           ********************  Starting Training!  ********************
+Training: 0it [00:00, ?it/s]
+********************Starting train epoch 0!********************
+
+Training:   0%|          | 0/87 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/87 [00:00<?, ?it/s] 

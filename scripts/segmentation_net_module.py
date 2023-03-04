@@ -69,10 +69,10 @@ class SegmentationNetModule(pl.LightningModule):
         val_batch, val_batch_labels = validation_batch['image'], validation_batch['label']
         x = val_batch
        	#print("Validation batch is on device " + str(x.get_device()))       # testing line
-        #val_output = self.seg_net(x)
-        roi_size = (512, 512)
-        sw_batch_size = 4
-        val_output = sliding_window_inference(x, roi_size, sw_batch_size, self)
+        val_output = self.seg_net(x)
+        # roi_size = (512, 512)
+        # sw_batch_size = 4
+        # val_output = sliding_window_inference(x, roi_size, sw_batch_size, self)
         loss = self.loss_fn(val_output, val_batch_labels)
         #self.log('validation/loss', loss)
         #self.wandb_run.log('validation/loss', loss, on_step=True)

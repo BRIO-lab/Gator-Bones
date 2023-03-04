@@ -4,6 +4,7 @@ import albumentations as A
 import numpy as np
 import time
 import os
+import monai
 
 class Configuration:
     def __init__(self):
@@ -13,7 +14,7 @@ class Configuration:
             'RUN_NAME': time.strftime('%Y-%m-%d-%H-%M-%S'),
             'WANDB_RUN_GROUP': 'Local',
             'FAST_DEV_RUN': False,  # Runs inputted batches (True->1) and disables logging and some callbacks
-            'MAX_EPOCHS': 20,
+            'MAX_EPOCHS': 100,
             'MAX_STEPS': -1,    # -1 means it will do all steps and be limited by epochs
             'STRATEGY': None    # This is the training strategy. Should be 'ddp' for multi-GPU (like HPG)
         }
@@ -66,7 +67,7 @@ class Configuration:
             #'IMAGE_DIRECTORY': '../TPLO_Ten_Dogs_grids', # C:\Users\gregg\Desktop\TPLO_Ten_Dogs_grids\TPLO_Ten_Dogs_grids
             'IMAGE_DIRECTORY': '/blue/banks/jiayu.huang/TPLO_Ten_Dogs_grids', # C:\Users\gregg\Desktop\TPLO_Ten_Dogs_grids\TPLO_Ten_Dogs_grids
             # *** CHANGE THE CHECKPOINT PATH TO YOUR OWN FOR TESTING ***
-            'CKPT_FILE': '../TPLO_Ten_Dogs_grids/TestModel.ckpt',  # used when loading model from a checkpoint
+            'CKPT_FILE': '/blue/banks/jiayu.huang/GatorBones/checkpoints/fem_100_Model.ckpt',  # used when loading model from a checkpoint
             # 'CKPT_FILE': None,  # used when loading model from a checkpoint, such as in testing
             'BATCH_SIZE': 8,
             'SHUFFLE': True,        # Only for training, for test and val this is set in the datamodule script to False

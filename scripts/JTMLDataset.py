@@ -41,8 +41,7 @@ class LitJTMLDataset(Dataset):
         
         #print(self.config.data_constants['MODEL_TYPE'])
         for i,j in enumerate(self.dataset[0,:]):
-            #if j == self.config.data_constants['MODEL_TYPE']:
-            if j == 'fem':
+            if j == self.config.dataset['MODEL_TYPE']:
                 self.labels = self.dataset[1:,i]
         
         # label check
